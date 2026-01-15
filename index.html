@@ -1,71 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>Página Pesada - Demo</title>
-<!-- No meta description, no viewport -->
-<style>
-/* Inline large CSS */
-body { font-family: Arial, sans-serif; background:#fff; color:#333; }
-.header { background-image: url('images/heavy_image_1.jpg'); height:400px; background-size:cover; }
-.section { padding:20px; border-bottom:1px solid #ddd; }
-.img-large { width:100%; height:auto; }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página optimizada bajo principios de ecodiseño digital.">
+    <title>Ecodiseño Web - Optimizado</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="header">
-  <h1 style="font-size:48px; margin:50px;">Bienvenidos a la página más pesada</h1>
-</div>
-<div class="content">
-  <div class="section">
-    <h2>Galería</h2>
-    <p>A continuación imágenes no optimizadas:</p>
-    <img src="images/heavy_image_1.jpg" class="img-large">
-    <img src="images/heavy_image_2.jpg" class="img-large">
-    <img src="images/heavy_image_3.jpg" class="img-large">
-  </div>
-  <div class="section">
-    <h2>Bloque de scripts pesados</h2>
-    <p>Se ejecutan procesos innecesarios en el cliente:</p>
-    <button onclick="runHeavy()">Ejecutar proceso pesado</button>
-  </div>
-  <div class="section">
-    <h2>Listados</h2>
-    <ul id="list">
-    </ul>
-  </div>
-</div>
+    <header class="header">
+        <h1>Ecodiseño Digital</h1>
+    </header>
 
-<!-- Heavy non-minified blocking script -->
-<script>
-// script.js inline heavy code
-function runHeavy() {
-    var result = 0;
-    for (var i = 0; i < 20000000; i++) {
-        result += Math.sqrt(i) * Math.sin(i);
-    }
-    alert('Proceso terminado: ' + result);
-}
+    <main class="content">
+        <section class="section">
+            <h2>Galería Optimizada</h2>
+            <p>Imágenes con lazy-loading y formatos eficientes:</p>
+            <img src="images/image_1.webp" class="img-large" loading="lazy" alt="Imagen optimizada 1">
+            <img src="images/image_2.webp" class="img-large" loading="lazy" alt="Imagen optimizada 2">
+            <img src="images/image_3.webp" class="img-large" loading="lazy" alt="Imagen optimizada 3">
+        </section>
 
-// Populate a large list with DOM operations inside loop (inefficient)
-var list = document.getElementById('list');
-for (var i = 0; i < 5000; i++) {
-    var li = document.createElement('li');
-    li.innerHTML = 'Elemento número ' + i;
-    list.appendChild(li);
-}
+        <section class="section">
+            <h2>Rendimiento de JS</h2>
+            <p>Procesos pesados movidos a ejecución bajo demanda:</p>
+            <button onclick="runHeavy()">Ejecutar cálculo</button>
+        </section>
 
-// Synchronous XHR blocking example (deprecated but intentionally heavy)
-function blockingXHR() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/no-existe', false); // synchronous
-    try {
-        xhr.send(null);
-    } catch(e) {}
-}
-// Call blocking XHR (commented out by default)
-// blockingXHR();
-</script>
+        <section class="section">
+            <h2>Listado Eficiente</h2>
+            <ul id="list"></ul>
+            <button id="anterior" type="button" value="-1" disabled>Página anterior</button>
+            <button id="siguiente" type="button" value="1">Página siguiente</button>
+        </section>
+    </main>
 
+    <script src="script.js" defer></script>
 </body>
 </html>

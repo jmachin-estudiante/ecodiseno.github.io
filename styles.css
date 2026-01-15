@@ -1,5 +1,1 @@
-/* External CSS but with unused rules and heavy selectors */
-.header { padding: 0; margin: 0; }
-.content { max-width: 1200px; margin: 0 auto; }
-.section { box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-.large-rule { background: linear-gradient(#fff, #eee); }
+body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#333;background-color:#fff;margin:0;padding:0}.content{max-width:1000px;margin:0 auto;padding:20px}.section{padding:20px;margin-bottom:20px;border:1px solid #eee;border-radius:8px;background:#fafafa}.img-large{width:100%;height:auto;display:block;margin:15px 0;border-radius:4px;aspect-ratio:16 / 9;object-fit:cover}button{background-color:#2c3e50;color:#fff;padding:10px 20px;border:none;border-radius:4px;cursor:pointer;font-size:16px;transition:background-color 0.3s ease}button:hover{background-color:#1a252f}ul#list{list-style-type:none;padding:0;max-height:400px;overflow-y:auto;border:1px solid #ddd}ul#list li{padding:8px;border-bottom:1px solid #eee;font-size:14px}h2{color:#2c3e50;border-left:5px solid #27ae60;padding-left:10px}
