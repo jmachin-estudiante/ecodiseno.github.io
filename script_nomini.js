@@ -10,8 +10,10 @@ if (list) {
     const total_paginas = 500;
     const anterior = document.getElementById('anterior');
     const siguiente = document.getElementById('siguiente');
-    
-    let pagina = anterior.getAttribute('value') + 1;
+
+
+    // Puse el parseInt para que lo pille pq es str
+    let pagina = parseInt(anterior.getAttribute('value')) + 1;
 
     if (pagina < 0)
         pagina = 0;
@@ -19,9 +21,9 @@ if (list) {
     anterior.setAttribute('value', pagina - 1);
     
     if (pagina == 0)
-        anterior.setAttribute('disable', 'disable');
+        anterior.setAttribute('disabled', 'disabled');
     else
-        anterior.removeAttribute('disable');
+        anterior.removeAttribute('disabled');
 
     if (pagina > total_paginas)
         pagina = total_paginas;
@@ -29,9 +31,9 @@ if (list) {
     const ultimo_elemento = ((pagina +1) * elementos_pagina) -1;
 
     if (pagina == total_paginas)
-        siguiente.setAttribute('disable', 'disable');
+        siguiente.setAttribute('disabled', 'disabled');
     else
-        siguiente.removeAttribute('disable');
+        siguiente.removeAttribute('disabled');
 
     for (let i = pagina * elementos_pagina; i <= ultimo_elemento ; i++) {
         const li = document.createElement('li');
@@ -39,22 +41,24 @@ if (list) {
         fragment.appendChild(li);
     }
 
-    // Una sola operación de inserción para evitar 5000 reflows
     list.appendChild(fragment);
 }
 
+
+
 // 2. Función pesada optimizada y bajo demanda
+// Ejecuta el cálculo pesado solo cuando el navegador está en un intervalo de inactividad,
+// evitando bloquear la interfaz y reduciendo el consumo energético.
+// requestIdleCallback permite que esta operación se realice sin afectar la fluidez de la página.
 function runHeavy() {
-    console.time('Calculo');
-    let result = 0;
-    // Ejecución controlada para reducir el estrés de la CPU
-    for (let i = 0; i < 1000000; i++) {
-        result += Math.sqrt(i);
-    }
-    console.timeEnd('Calculo');
-    alert('Proceso terminado con éxito.');
+    requestIdleCallback(() => {
+        console.time('Calculo');
+        let result = 0;
+        for (let i = 0; i < 1000000; i++) {
+            result += Math.sqrt(i);
+        }
+        console.timeEnd('Calculo');
+        alert('Proceso terminado con éxito.');
+    });
 }
-
-// Se eliminó el XHR síncrono por ser una práctica ineficiente que bloquea el hilo principal.
-
 
