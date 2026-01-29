@@ -1,0 +1,27 @@
+{
+  "name": "soj.lan",
+  "version": "1.0.0",
+  "description": "La página original presentaba varios aspectos que incrementaban el consumo energético y afectaban al rendimiento: - Imágenes pesadas sin optimizar y sin control de carga. - Scripts ejecutados de forma inmediata, bloqueando el renderizado. - Inserciones repetitivas en el DOM que generaban múltiples reflows. - Recursos dispersos y sin depuración, aumentando el número de peticiones. - Ausencia de justificación documental sobre las decisiones de diseño.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmachin-estudiante/ecodiseno.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jmachin-estudiante/ecodiseno.github.io/issues"
+  },
+  "homepage": "https://github.com/jmachin-estudiante/ecodiseno.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
+}
