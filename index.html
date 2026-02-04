@@ -7,31 +7,35 @@
     <title>Ecodiseño Web - Optimizado</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body>
-    <header class="header">
-        <h1>Ecodiseño Digital</h1>
+<body class="bg-sky-500/50">
+    <header class="p-5">
+        <h1 class="text-xl font-bold text-center uppercase">Ecodiseño Digital</h1>
     </header>
 
-    <main class="content">
-        <section class="section" class="flex justify-between items-center">
-            <h2>Galería Optimizada</h2>
+    <main class="p-5">
+        <section class="section">
+            <h2 class="text-l font-bold text-center uppercase">Galería Optimizada</h2>
             <p>Imágenes con lazy-loading y formatos eficientes:</p>
-            <img src="images/image_1.webp" class="img-large m-2" loading="lazy" width="800" height="600" alt="Imagen optimizada 1">
-            <img src="images/image_2.webp" class="img-large" loading="lazy" width="800" height="600" alt="Imagen optimizada 2">
-            <img src="images/image_3.webp" class="img-large" loading="lazy" width="800" height="600" alt="Imagen optimizada 3">
+            <div class="flex flex-row gap-4">
+                <img src="images/image_1.webp" class="w-1/3 rounded-lg" loading="lazy"  alt="Imagen optimizada 1">
+                <img src="images/image_2.webp" class="w-1/3 rounded-lg" loading="lazy"  alt="Imagen optimizada 2">
+                <img src="images/image_3.webp" class="w-1/3 rounded-lg" loading="lazy"  alt="Imagen optimizada 3">
+            </div>
         </section>
 
-        <section class="section">
-            <h2>Rendimiento de JS</h2>
+        <section class="section p-5">
+            <h2 class="text-l font-bold text-center uppercase">Rendimiento de JS</h2>
             <p>Procesos pesados movidos a ejecución bajo demanda:</p>
-            <button onclick="runHeavy()">Ejecutar cálculo</button>
+            <button onclick="runHeavy()" class="block mx-auto bg-pink-500 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ejecutar cálculo</button>
         </section>
 
-        <section class="section">
-            <h2>Listado Eficiente</h2>
-            <ul id="list"></ul>
-            <button id="anterior" type="button" value="-1" disabled>Página anterior</button>
-            <button id="siguiente" type="button" value="1" >Página siguiente</button>
+        <section class="section p-5">
+            <h2 class="text-l font-bold text-center uppercase">Listado Eficiente</h2>
+            <ul id="list" class="text-center bg-sky-500/75 flex flex-col justify-between items-center p-4 m-2 list-inside space-y-4"></ul>
+            <div class="flex justify-between w-full">
+                <button id="btna" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="anterior" type="button" value="-1" disabled>Página anterior</button>
+                <button id="btns" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="siguiente" type="button" value="1" >Página siguiente</button>
+            </div>
         </section>
     </main>
 
